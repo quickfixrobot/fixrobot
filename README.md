@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 README
 -------
 FIXRobot is software to write testcases and test FIXEngine using FIX Protocol. FIXRobot can act as intitiator and acceptor/exchange. FIXRobot can send and receive FIX messages and will compare the actual messages with the expected messages.
@@ -56,7 +55,3 @@ Reporting bugs: https://github.com/quickfixrobot/FIXRobot/issues
 
 
 
-=======
-# FixRobot
-FixRobot
->>>>>>> 9af9eed63de4ca0cb19c12f82e5cc7157ea69c1f

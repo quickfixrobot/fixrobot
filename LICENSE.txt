@@ -235,11 +235,6 @@ QUICKFIX LICENSE
 http://www.quickfixengine.org/quickfix/doc/html/license.html
 
 
-ROBOT FRAMEWORK LICENSE
------------------------
-robotframework.org
-
-
 PYTHON LICENSE
 ---------------
 https://www.python.org/download/releases/2.7/license/

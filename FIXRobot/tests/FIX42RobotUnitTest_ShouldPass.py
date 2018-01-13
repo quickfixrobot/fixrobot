@@ -18,9 +18,10 @@ from FIXRobot import *
 
 import unittest
 
-
+#FIXRobot testcase extending unittest.TestCase class
 class FIXRobotUnitTest(unittest.TestCase):
 
+    #Testcase setup class method only called once in the beginning.
     @classmethod
     def setUpClass(cls):
         os.environ["FIXROBOTPATH"] = os.path.dirname(
@@ -40,6 +41,7 @@ class FIXRobotUnitTest(unittest.TestCase):
         time.sleep(1)
         cls.tearDownCount = 1
 
+    #Testcase teardown class method only called once in the end.
     @classmethod
     def tearDownClass(cls):
         returnValue = cls.exch.clearMessageStore()
@@ -54,6 +56,7 @@ class FIXRobotUnitTest(unittest.TestCase):
         time.sleep(1)
         cls.tearDownCount = cls.tearDownCount + 1
 
+    #Positive testcase for NewOrderSingle and Fill where fix message arguments are passed as strings.
     def test_NewOrderSingleFilled_AsStrings_ShouldPass(self):
         returnValue = self.exch.clearMessageStore()
         self.assertEqual(returnValue, True)
@@ -98,6 +101,7 @@ class FIXRobotUnitTest(unittest.TestCase):
                 returnMessageInitiator.getHeader().getField(35), "8")
         time.sleep(1)
 
+    #Positive testcase for NewOrderSingle and Filled where fix message arguments are passed as template names.
     def test_NewOrderSingleFilled_AsNames_ShouldPass(self):
         returnValue = self.exch.clearMessageStore()
         self.assertEqual(returnValue, True)
@@ -144,6 +148,7 @@ class FIXRobotUnitTest(unittest.TestCase):
         self.assertEqual(returnValue, True)
         time.sleep(1)
 
+    #Positive testcase for NewOrderSingle and CancelRequest where fix message arguments are passed as template names.
     def test_NewOrderSingleOrderCancelRequest_AsNames_ShouldPass(self):
         returnValue = self.exch.clearMessageStore()
         self.assertEqual(returnValue, True)
@@ -200,6 +205,7 @@ class FIXRobotUnitTest(unittest.TestCase):
 
         time.sleep(1)
 
+    #Positive testcase for NewOrderSingle and CancelReplaceRequest where fix message arguments are passed as template names.
     def test_NewOrderSingleOrderCancelReplaceRequest_AsNames_ShouldPass(self):
         returnValue = self.exch.clearMessageStore()
         self.assertEqual(returnValue, True)
@@ -256,6 +262,7 @@ class FIXRobotUnitTest(unittest.TestCase):
                 returnMessageInitiator.getHeader().getField(35), "8")
         time.sleep(1)
 
+    #Positive testcase for TestRequest and Heartbeat where fix message arguments are passed as template names.
     def test_TestRequestHeartBeat_AsNames_ShouldPass(self):
         returnValue = self.exch.clearMessageStore()
         self.assertEqual(returnValue, True)
@@ -286,6 +293,7 @@ class FIXRobotUnitTest(unittest.TestCase):
                 returnMessageInitiator.getHeader().getField(35), "0")
         time.sleep(1)
 
+    #Positive testcase for OrderList and Fill where fix message arguments are passed as template names.
     def test_OrderListAckFill_AsNames_ShouldPass(self):
         returnValue = self.exch.clearMessageStore()
 
@@ -355,6 +363,7 @@ class FIXRobotUnitTest(unittest.TestCase):
                 returnMessageInitiator.getHeader().getField(35), "8")
         time.sleep(1)
 
+    #Positive testcase for OrderList and Fill reverse flow where fix message arguments are passed as template names.
     def test_OrderListAckFillReverse_AsNames_ShouldPass(self):
         returnValue = self.exch.clearMessageStore()
         self.assertEqual(returnValue, True)
@@ -425,6 +434,7 @@ class FIXRobotUnitTest(unittest.TestCase):
                 returnMessageAcceptor.getHeader().getField(35), "8")
         time.sleep(1)
 
+    #Positive testcase for TestRequest and Heartbeat in reverse flow where fix message arguments are passed as template names.
     def test_TestRequestHeartBeatReverse_AsNames_ShouldPass(self):
         returnValue = self.exch.clearMessageStore()
         self.assertEqual(returnValue, True)
@@ -449,11 +459,13 @@ class FIXRobotUnitTest(unittest.TestCase):
                 returnMessageAcceptor.getHeader().getField(35), "0")
         time.sleep(1)
 
+    #Positive testcase for get sender and target message sequence number.
     def test_getSenderAndTargetMsgSeqNum_ShouldPass(self):
         senderValue = self.client.getExpectedSenderNum()
         targetValue = self.client.getExpectedTargetNum()
         self.assertEqual(type(senderValue), type(targetValue))
 
+    #Positive testcase for ResendRequest where fix message arguments are passed as template names.
     def test_ResendRequest_AsNames_ShouldPass(self):
         returnValue = self.exch.clearMessageStore()
         self.assertEqual(returnValue, True)

@@ -60,22 +60,36 @@ def getId(inputStr):
 
 
 class FIXMessageEvaluator():
-
-    def evalMsgType(self, msgTypeString):
-        fullMsgTypeString = "fix.MsgType_" + msgTypeString
-        return eval(fullMsgTypeString)
-
+    def evalMsgType(self,  msgTypeString):
+        try: 
+            fullMsgTypeString = "fix.MsgType_" + msgTypeString
+            return eval(fullMsgTypeString)
+        except Exception as e:
+            logging.debug("Exception!!!:%s, %s", e.args, sys.exc_info()[0])
+            raise Exception
 
 class FIXRobotProcessor(fix.Application):
-
+    '''
+        FIXRobotProcessor
+    '''
     orderID = 0
     execID = 0
     incomingFIXRobotMessage = None
     sessID = None
 
     ROBOT_LIBRARY_SCOPE = 'TEST SUITE'
-
+     
     def onCreate(self, sessionID):
+        '''
+            This is a callback function from quickfix library which is called in the event of creation of a new fix connection.
+
+                Args:
+                    sessionID(SessionId): FIX connection session object.
+                Returns:
+                    None.
+                Raises:
+                    None.
+        '''
         self.incomingFIXRobotAdminMessage = None
         self.incomingFIXRobotAppMessage = None
         self.outgoingFIXRobotAdminMessage = None
@@ -95,14 +109,48 @@ class FIXRobotProcessor(fix.Application):
         return
 
     def onLogon(self, sessionID):
+        '''
+            This is a callback function from quickfix library which is called in the event of logon by the fix connection.
+
+                Args:
+                    sessionID(SessionId): FIX connection session object.
+                Returns:
+                    None.
+                Raises:
+                    None.
+        '''     
         logging.debug("Successful Logon to session:%s", sessionID.toString())
         return
 
     def onLogout(self, sessionID):
+        '''
+            This is a callback function from quickfix library which is called in the event of logout by the fix connection.
+
+                Args:
+                    sessionID(SessionId): FIX connection session object.
+                Returns:
+                    None.
+                Raises:
+                    None.
+        ''' 
+        logging.debug("Successful Logout to session:%s", sessionID.toString())
         return
 
     def toAdmin(self, message, sessionID):
-        #self.outgoingFIXRobotAdminMessageDeque = deque()
+        '''
+            This is a callback function from quickfix library which is called when an admin message is received.
+
+                Args:
+                    message(Message): Received admin FIX message object.
+                    sessionID(SessionId): FIX connection session object.
+                Returns:
+                    None.
+                Raises:
+                    None.
+        ''' 
+        #self.outgoingFIXRobotAdminMessageDeque = deque() 
+        if 'self.outgoingFIXRobotAdminMessageDeque' not in locals() or 'self.outgoingFIXRobotAdminMessageDeque' not in globals():
+            self.outgoingFIXRobotAdminMessageDeque = deque()
         if len(self.outgoingFIXRobotAdminMessageDeque) > 0:
             self.outgoingFIXRobotAdminMessageDeque.clear()
         self.outgoingFIXRobotAdminMessage = fix.Message(message)
@@ -112,7 +160,20 @@ class FIXRobotProcessor(fix.Application):
                       sessionID.toString(), self.outgoingFIXRobotAdminMessage.toString())
 
     def fromAdmin(self, message, sessionID):
+        '''
+            This is a callback function from quickfix library which is called when an admin message is sent.
+
+                Args:
+                    message(Message): Sent admin FIX message object.
+                    sessionID(SessionId): FIX connection session object.
+                Returns:
+                    None.
+                Raises:
+                    None.
+        ''' 
         #self.incomingFIXRobotAdminMessageDeque = deque()
+        if 'self.incomingFIXRobotAdminMessageDeque' not in locals() or 'self.incomingFIXRobotAdminMessageDeque' not in globals():
+            self.incomingFIXRobotAdminMessageDeque = deque()
         self.incomingFIXRobotAdminMessage = fix.Message(message)
         if len(self.incomingFIXRobotAdminMessageDeque) > 0:
             if(self.incomingFIXRobotAdminMessage.getHeader().isSetField(43)):
@@ -126,6 +187,17 @@ class FIXRobotProcessor(fix.Application):
                       sessionID.toString(), self.incomingFIXRobotAdminMessage.toString())
 
     def toApp(self, message, sessionID):
+        '''
+            This is a callback function from quickfix library which is called when an application message is received.
+
+                Args:
+                    message(Message): Received application FIX message object.
+                    sessionID(SessionId): FIX connection session object.
+                Returns:
+                    None.
+                Raises:
+                    None.
+        ''' 
         #self.outgoingFIXRobotAppMessageDeque = deque()
         if len(self.outgoingFIXRobotAppMessageDeque) > 0:
             self.outgoingFIXRobotAppMessageDeque.clear()
@@ -136,6 +208,17 @@ class FIXRobotProcessor(fix.Application):
                       sessionID.toString(), self.outgoingFIXRobotAppMessage.toString())
 
     def fromApp(self, message, sessionID):
+        '''
+            This is a callback function from quickfix library which is called when an application message is sent.
+
+                Args:
+                    message(Message): Received application FIX message object.
+                    sessionID(SessionId): FIX connection session object.
+                Returns:
+                    None.
+                Raises:
+                    None.
+        '''
         #self.incomingFIXRobotAppMessageDeque = deque()
         self.incomingFIXRobotAppMessage = fix.Message(message)
         if len(self.incomingFIXRobotAppMessageDeque) > 0:
@@ -150,6 +233,16 @@ class FIXRobotProcessor(fix.Application):
                       sessionID.toString(), self.incomingFIXRobotAppMessage.toString())
 
     def getExpectedSenderNum(self):
+        '''
+            This function is used to get the next out sequence number.
+
+                Args:
+                    None.
+                Returns:
+                    None.
+                Raises:
+                    Exception: Raises exception when error occours.
+        '''
         # self.session.setNextSenderMsgSeqNum(n)
         # self.session.getExpectedSenderNum()
         try:
@@ -163,6 +256,16 @@ class FIXRobotProcessor(fix.Application):
             raise Exception
 
     def setNextSenderMsgSeqNum(self, senderSeqNo):
+        '''
+            This function is used to set the next out sequence number.
+
+                Args:
+                    senderSeqNo(int): Out sequence number to set.
+                Returns:
+                    None.
+                Raises:
+                    Exception: Raises exception when error occours.
+        '''
         # self.session.setNextSenderMsgSeqNum(n)
         # self.session.getExpectedSenderNum()
         try:
@@ -176,6 +279,16 @@ class FIXRobotProcessor(fix.Application):
             raise Exception
 
     def getExpectedTargetNum(self):
+        '''
+            This function is used to get the next in sequence number.
+
+                Args:
+                    None.
+                Returns:
+                    None.
+                Raises:
+                    Exception: Raises exception when error occours.
+        '''
         # self.session.setNextTargetMsgSeqNum(n)
         # self.session.getExpectedTargetNum()
         try:
@@ -189,6 +302,16 @@ class FIXRobotProcessor(fix.Application):
             raise Exception
 
     def setNextTargetMsgSeqNum(self, targetSeqNo):
+        '''
+            This function is used to set the next expected in sequence number.
+
+                Args:
+                    targetSeqNo(int): In sequence number to set.
+                Returns:
+                    None.
+                Raises:
+                    Exception: Raises exception when error occours.
+        '''
         # self.session.setNextTargetMsgSeqNum(n)
         # self.session.getExpectedSenderNum()
         try:
@@ -202,26 +325,29 @@ class FIXRobotProcessor(fix.Application):
             raise Exception
 
     def presetFIXRobotMessage(self, presetMessage):
+        '''
+            This function is used to set a preset message and can be used for a any future purpose.
+
+                Args:
+                    presetMessage(str): Preset a message string.
+                Returns:
+                    None.
+                Raises:
+                    None.
+        '''
         self.presetMessage = presetMessage
         return
-
-    def genOrderID(self):
-        self.orderID = self.orderID + 1
-        return "ORDID-" + str(self.orderID)
-
-    def genExecID(self):
-        self.execID = self.execID + 1
-        return "EXECID-" + str(self.execID)
-
-    def genClOrdID(self):
-        self.clOrdID = self.clOrdID + 1
-        return "CLORDID-" + str(self.clOrdID)
-
-    def genTestReqID(self):
-        self.testReqID = self.testReqID + 1
-        return "TESTREQID-" + str(self.testReqID)
-
     def logDumpMessageStore(self):
+        '''
+            This function is used to dump a copy of messages into the logs.
+
+            Args:
+                None.
+            Returns:
+                None.
+            Raises:
+                Exception: Raises exception when error occours.
+        '''
         try:
             for itemIndex in range(len(self.incomingFIXRobotAdminMessageDeque)):
                 logging.debug("Logging Incoming %s Admin Message %s : %s", itemIndex,
@@ -243,6 +369,16 @@ class FIXRobotProcessor(fix.Application):
             raise Exception
 
     def clearMessageStore(self):
+        '''
+            This function is used to clear the message store.
+
+                Args:
+                    None.
+                Returns:
+                    None.
+                Raises:
+                    Exception: Raises exception when error occours.
+        '''
         try:
             for itemIndex in range(len(self.incomingFIXRobotAdminMessageDeque)):
                 logging.debug("Clearing Incoming %s Admin Message %s : %s", itemIndex,
@@ -256,7 +392,6 @@ class FIXRobotProcessor(fix.Application):
             for itemIndex in range(len(self.outgoingFIXRobotAppMessageDeque)):
                 logging.debug("Clearing Outgoing %s App Message %s : %s", itemIndex,
                               self.sessID.toString(),  self.outgoingFIXRobotAppMessageDeque.popleft().toString())
-
             logging.debug(
                 "Cleared incoming and outgoing %s Admin and App message store", self.sessID.toString())
         except Exception as e:
@@ -265,6 +400,21 @@ class FIXRobotProcessor(fix.Application):
             raise Exception
 
     def setMessagePart(self, fixMessage, defaultApplVerID, incomingFIXRobotMessage, outgoingFIXRobotMessage, fixMessageString):
+        '''
+            This function is used to create a FIX message object to send from a FIX message template string and 
+            using previous incoming and outgoing FIX messages.
+
+                Args:
+                    fixMessage(Message): FIX message object created by setting its tag values to send.
+                    defaultApplVerID(str): Application version FIX4.2, FIX5.0 etc..
+                    incomingFIXRobotMessage(Message): To use values from incoming message to create a new FIX message to send.
+                    outgoingFIXRobotMessage(Message): To use values from outgoing message to create a new FIX message to send.
+                    fixMessageString(str): FIX message template to create a new FIX message to send.
+                Returns:
+                    Message: Returns FIX message object.
+                Raises:
+                    Exception: Raises exception when error occours.
+        '''
         try:
             isGroupMessage = False
             groupCountDict = dict()
@@ -434,6 +584,22 @@ class FIXRobotProcessor(fix.Application):
 
     def checkMessagePart(self, fixMessage, defaultApplVerID, fixGroupNumField, fixVersionEvalString, expectedFIXRobotMessageName,
                          fixMessageString):
+        '''
+            This function is used to compare an actual FIX message against the expected FIX message.
+            The tag value comparison results are written to the log file and returns the status of comparison.
+
+                Args:
+                    fixMessage(Message): Actual FIX message object to be compared.
+                    defaultApplVerID(str): FIX Application version FIX4.2, FIX5.0 etc..
+                    fixGroupNumField(Group): Nested group name inside a FIX message object.
+                    fixVersionEvalString(str): FIX version FIX4.2, FIXT1.1 etc..
+                    expectedFIXRobotMessageName(str): FIX message name.
+                    fixMessageString(str): Expected FIX message in string template format
+                Returns:
+                    bool: Returns True if difference is found during comparison of actual and expected FIX messages and False otherwise.
+                Raises:
+                    Exception: Raises exception when error occours.
+        '''
         try:
             logging.debug("checkMessagePart DefaultMessage: %s",
                           fixMessageString)
@@ -585,6 +751,20 @@ class FIXRobotProcessor(fix.Application):
             logging.debug("Exception!!! %s, %s", e.args, sys.exc_info()[0])
 
     def sendFIXRobotMessage(self, defaultAdminVerID, defaultApplVerID, *args):
+        '''
+            This function is used to send the FIX message.
+
+                Args:
+                    defaultAdminVerID(str): FIX admin version FIX4.2, FIXT1.1 etc..
+                    defaultApplVerID(str): FIX application version FIX4.2, FIX5.0 etc..
+                    *args(vargs): FIX message is a variable argument which is mentioned
+                              either as a message template name in the message template dictionary
+                              or as a message type name and message string.                                                         
+                Returns:
+                    Message: Returns fix message which is sent.
+                Raises:
+                    Exception: Raises exception when error occours.
+        '''
         try:
             fixAdminVersionEvalString = defaultAdminVerID.strip().replace('.', '').lower()
             fixVersionEvalString = defaultApplVerID.strip().replace('.', '').lower()
@@ -669,6 +849,20 @@ class FIXRobotProcessor(fix.Application):
             raise Exception
 
     def receiveFIXRobotMessage(self, defaultAdminVerID, defaultApplVerID, *args):
+        '''
+            This function is used to receive the FIX message.
+
+                Args:
+                    defaultAdminVerID(str): FIX admin version FIX4.2, FIXT1.1 etc..
+                    defaultApplVerID(str): FIX application version FIX4.2, FIX5.0 etc..
+                    *args(vargs): FIX message is a variable argument which is mentioned
+                              either as a message template name in the message template dictionary
+                              or as a message type name and message string.                                                         
+                Returns:
+                    Message: Returns fix message which is received.
+                Raises:
+                    Exception: Raises exception when error occours.
+        '''
         try:
             self.cmpResultList = list()
             fixAdminVersionEvalString = defaultAdminVerID.strip().replace('.', '').lower()
@@ -754,8 +948,21 @@ class FIXRobotProcessor(fix.Application):
 
 
 class FIXRobot():
-
+    '''
+        FIXRobot class creates a FIX connection and/or then send and receive FIX messages
+    '''
     def startFIXRobot(self, conn_name, instanceType):
+        '''
+            Starts a fix connection for a specified connection name and type of instance as initiator or acceptor.
+
+                Args:
+                    conn_name(str): FIX connection name.
+                    instanceType(str): Type of the instance as initiator or acceptor.
+                Returns:
+                    bool: The return value. True for success, False otherwise
+                Raises:
+                    Exception: Raises exception when error occours.
+        '''    
         try:
             # self.stdout_backup=sys.stdout
             # self.trash_file=open('file', 'w')
@@ -824,6 +1031,16 @@ class FIXRobot():
             raise Exception
 
     def startInitiator(self, conn_name):
+        '''
+            Starts initiator for a given connection name.
+
+                Args:
+                    conn_name(str): FIX connection name.
+                Returns:
+                    bool: The return value. True for success, False otherwise
+                Raises:
+                    Exception: Raises exception when error occours.
+        '''    
         try:
             returnValue = self.startFIXRobot(conn_name, "INITIATOR")
             return returnValue
@@ -833,6 +1050,16 @@ class FIXRobot():
             raise Exception
 
     def startAcceptor(self, conn_name):
+        '''
+            Starts acceptor for a given connection name.
+
+                Args:
+                    conn_name(str): FIX connection name.
+                Returns:
+                    bool: The return value. True for success, False otherwise
+                Raises:
+                    Exception: Raises exception when error occours.
+        ''' 
         try:
             returnValue = self.startFIXRobot(conn_name, "ACCEPTOR")
             return returnValue
@@ -842,6 +1069,18 @@ class FIXRobot():
             raise
 
     def sendMessage(self, *args):
+        '''
+            Send FIX message to the FIX connection.
+
+                Args:
+                    *args(vargs): FIX message is a variable argument which is mentioned
+                                  either as a message template name in the message template dictionary
+                                  or as a message type name and message string.
+                Returns:
+                    Message: Returns fix message which is received.
+                Raises:
+                    Exception: Raises exception when error occours.
+        '''
         try:
             if (len(args) == 1) or (len(args) == 2):
                 fixMessage = self.application.sendFIXRobotMessage(
@@ -857,6 +1096,18 @@ class FIXRobot():
             raise Exception
 
     def receiveMessage(self, *args):
+        '''
+            Receive FIX message from the FIX connection.
+
+                Args:
+                    *args(vargs): FIX message is a variable argument which is mentioned
+                                  either as a message template name in the message template dictionary
+                                  or as a message type name and message string.
+                Returns:
+                    Message: Returns fix message which is received.
+                Raises:
+                    Exception: Raises exception when error occours.
+        '''
         try:
             if (len(args) == 1) or (len(args) == 2):
                 fixMessage = self.application.receiveFIXRobotMessage(
@@ -872,6 +1123,16 @@ class FIXRobot():
             raise Exception
 
     def getExpectedSenderNum(self):
+        '''
+            This function is used to get the next out sequence number.
+
+                Args:
+                    None.
+                Returns:
+                    None.
+                Raises:
+                    Exception: Raises exception when error occours.
+        '''
         try:
             senderSeqNo = self.application.getExpectedSenderNum()
             return senderSeqNo
@@ -881,6 +1142,16 @@ class FIXRobot():
             raise Exception
 
     def setNextSenderMsgSeqNum(self, senderSeqNo):
+        '''
+            This function is used to set the next out sequence number.
+
+                Args:
+                    senderSeqNo(int): Out sequence number to set.
+                Returns:
+                    None.
+                Raises:
+                    Exception: Raises exception when error occours.
+        '''
         try:
             self.application.setNextSenderMsgSeqNum(senderSeqNo)
             return True
@@ -890,6 +1161,16 @@ class FIXRobot():
             raise Exception
 
     def getExpectedTargetNum(self):
+        '''
+            This function is used to get the next in sequence number.
+
+                Args:
+                    None.
+                Returns:
+                    None.
+                Raises:
+                    Exception: Raises exception when error occours.
+        '''
         try:
             targetSeqNo = self.application.getExpectedTargetNum()
             return targetSeqNo
@@ -899,6 +1180,16 @@ class FIXRobot():
             raise Exception
 
     def setNextTargetMsgSeqNum(self, targetSeqNo):
+        '''
+            This function is used to set the next expected in sequence number.
+
+                Args:
+                    targetSeqNo(int): In sequence number to set.
+                Returns:
+                    None.
+                Raises:
+                    Exception: Raises exception when error occours.
+        '''
         try:
             self.application.setNextTargetMsgSeqNum(targetSeqNo)
             return True
@@ -908,6 +1199,17 @@ class FIXRobot():
             raise Exception
 
     def logDumpMessageStore(self):
+        '''
+            This function is used to dump a copy of messages into the logs.
+
+                Args:
+                    None.
+                Returns:
+                    None.
+                Raises:
+                    Exception: Raises exception when error occours.
+
+        '''
         try:
             self.application.logDumpMessageStore()
             return True
@@ -917,6 +1219,16 @@ class FIXRobot():
             raise Exception
 
     def clearMessageStore(self):
+        '''
+            This function is used to clear the message store.
+
+                Args:
+                    None.
+                Returns:
+                    None.
+                Raises:
+                    Exception: Raises exception when error occours.
+        '''
         try:
             self.application.clearMessageStore()
             return True
@@ -926,6 +1238,16 @@ class FIXRobot():
             raise Exception
 
     def stopInitiator(self):
+        '''
+            Stops initiator for a given connection name.
+
+                Args:
+                    None.
+                Returns:
+                    None.
+                Raises:
+                    Exception: Raises exception when error occours.
+        '''  
         try:
             self.fixRobot.stop()
             logging.debug("Initiator stopped")
@@ -936,6 +1258,16 @@ class FIXRobot():
             raise Exception
 
     def stopAcceptor(self):
+        '''
+            Stops acceptor for a given connection name.
+
+                Args:
+                    None.
+                Returns:
+                    None.
+                Raises:
+                    Exception: Raises exception when error occours.
+        '''  
         try:
             self.fixRobot.stop()
             logging.debug("Acceptor stopped")

@@ -1,0 +1,699 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>FIXRobot package &#8212; FIXRobot 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="fixrobot-package">
+<h1>FIXRobot package<a class="headerlink" href="#fixrobot-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="FIXRobot.tests.html">FIXRobot.tests package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="FIXRobot.tests.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FIXRobot.tests.html#module-FIXRobot.tests.FIX42RobotUnitTest_ShouldFail">FIXRobot.tests.FIX42RobotUnitTest_ShouldFail module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FIXRobot.tests.html#module-FIXRobot.tests.FIX42RobotUnitTest_ShouldPass">FIXRobot.tests.FIX42RobotUnitTest_ShouldPass module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FIXRobot.tests.html#module-FIXRobot.tests.FIX50RobotUnitTest_ShouldFail">FIXRobot.tests.FIX50RobotUnitTest_ShouldFail module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FIXRobot.tests.html#module-FIXRobot.tests.FIX50RobotUnitTest_ShouldPass">FIXRobot.tests.FIX50RobotUnitTest_ShouldPass module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FIXRobot.tests.html#module-FIXRobot.tests">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-FIXRobot.FIXRobot">
+<span id="fixrobot-fixrobot-module"></span><h2>FIXRobot.FIXRobot module<a class="headerlink" href="#module-FIXRobot.FIXRobot" title="Permalink to this headline">¶</a></h2>
+<p>FIXRobot is software to write testcases and test FIXEngine using FIX Protocol. 
+FIXRobot can act as intitiator and acceptor/exchange. 
+FIXRobot can send and receive FIX messages and will compare the actual messages with the expected messages.</p>
+<dl class="class">
+<dt id="FIXRobot.FIXRobot.FIXMessageEvaluator">
+<em class="property">class </em><code class="descclassname">FIXRobot.FIXRobot.</code><code class="descname">FIXMessageEvaluator</code><a class="headerlink" href="#FIXRobot.FIXRobot.FIXMessageEvaluator" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="FIXRobot.FIXRobot.FIXMessageEvaluator.evalMsgType">
+<code class="descname">evalMsgType</code><span class="sig-paren">(</span><em>msgTypeString</em><span class="sig-paren">)</span><a class="headerlink" href="#FIXRobot.FIXRobot.FIXMessageEvaluator.evalMsgType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="FIXRobot.FIXRobot.FIXRobot">
+<em class="property">class </em><code class="descclassname">FIXRobot.FIXRobot.</code><code class="descname">FIXRobot</code><a class="headerlink" href="#FIXRobot.FIXRobot.FIXRobot" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXRobot class creates a FIX connection and/or then send and receive FIX messages</p>
+<dl class="method">
+<dt id="FIXRobot.FIXRobot.FIXRobot.clearMessageStore">
+<code class="descname">clearMessageStore</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#FIXRobot.FIXRobot.FIXRobot.clearMessageStore" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is used to clear the message store.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Args:</dt>
+<dd>None.</dd>
+<dt>Returns:</dt>
+<dd>None.</dd>
+<dt>Raises:</dt>
+<dd>Exception: Raises exception when error occours.</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="FIXRobot.FIXRobot.FIXRobot.getExpectedSenderNum">
+<code class="descname">getExpectedSenderNum</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#FIXRobot.FIXRobot.FIXRobot.getExpectedSenderNum" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is used to get the next out sequence number.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Args:</dt>
+<dd>None.</dd>
+<dt>Returns:</dt>
+<dd>None.</dd>
+<dt>Raises:</dt>
+<dd>Exception: Raises exception when error occours.</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="FIXRobot.FIXRobot.FIXRobot.getExpectedTargetNum">
+<code class="descname">getExpectedTargetNum</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#FIXRobot.FIXRobot.FIXRobot.getExpectedTargetNum" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is used to get the next in sequence number.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Args:</dt>
+<dd>None.</dd>
+<dt>Returns:</dt>
+<dd>None.</dd>
+<dt>Raises:</dt>
+<dd>Exception: Raises exception when error occours.</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="FIXRobot.FIXRobot.FIXRobot.logDumpMessageStore">
+<code class="descname">logDumpMessageStore</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#FIXRobot.FIXRobot.FIXRobot.logDumpMessageStore" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is used to dump a copy of messages into the logs.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Args:</dt>
+<dd>None.</dd>
+<dt>Returns:</dt>
+<dd>None.</dd>
+<dt>Raises:</dt>
+<dd>Exception: Raises exception when error occours.</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="FIXRobot.FIXRobot.FIXRobot.receiveMessage">
+<code class="descname">receiveMessage</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#FIXRobot.FIXRobot.FIXRobot.receiveMessage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Receive FIX message from the FIX connection.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Args:</dt>
+<dd><dl class="first last docutils">
+<dt><a href="#id1"><span class="problematic" id="id2">*</span></a>args(vargs): FIX message is a variable argument which is mentioned</dt>
+<dd>either as a message template name in the message template dictionary
+or as a message type name and message string.</dd>
+</dl>
+</dd>
+<dt>Returns:</dt>
+<dd>Message: Returns fix message which is received.</dd>
+<dt>Raises:</dt>
+<dd>Exception: Raises exception when error occours.</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="FIXRobot.FIXRobot.FIXRobot.sendMessage">
+<code class="descname">sendMessage</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#FIXRobot.FIXRobot.FIXRobot.sendMessage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send FIX message to the FIX connection.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Args:</dt>
+<dd><dl class="first last docutils">
+<dt><a href="#id3"><span class="problematic" id="id4">*</span></a>args(vargs): FIX message is a variable argument which is mentioned</dt>
+<dd>either as a message template name in the message template dictionary
+or as a message type name and message string.</dd>
+</dl>
+</dd>
+<dt>Returns:</dt>
+<dd>Message: Returns fix message which is received.</dd>
+<dt>Raises:</dt>
+<dd>Exception: Raises exception when error occours.</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="FIXRobot.FIXRobot.FIXRobot.setNextSenderMsgSeqNum">
+<code class="descname">setNextSenderMsgSeqNum</code><span class="sig-paren">(</span><em>senderSeqNo</em><span class="sig-paren">)</span><a class="headerlink" href="#FIXRobot.FIXRobot.FIXRobot.setNextSenderMsgSeqNum" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is used to set the next out sequence number.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Args:</dt>
+<dd>senderSeqNo(int): Out sequence number to set.</dd>
+<dt>Returns:</dt>
+<dd>None.</dd>
+<dt>Raises:</dt>
+<dd>Exception: Raises exception when error occours.</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="FIXRobot.FIXRobot.FIXRobot.setNextTargetMsgSeqNum">
+<code class="descname">setNextTargetMsgSeqNum</code><span class="sig-paren">(</span><em>targetSeqNo</em><span class="sig-paren">)</span><a class="headerlink" href="#FIXRobot.FIXRobot.FIXRobot.setNextTargetMsgSeqNum" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is used to set the next expected in sequence number.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Args:</dt>
+<dd>targetSeqNo(int): In sequence number to set.</dd>
+<dt>Returns:</dt>
+<dd>None.</dd>
+<dt>Raises:</dt>
+<dd>Exception: Raises exception when error occours.</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="FIXRobot.FIXRobot.FIXRobot.startAcceptor">
+<code class="descname">startAcceptor</code><span class="sig-paren">(</span><em>conn_name</em><span class="sig-paren">)</span><a class="headerlink" href="#FIXRobot.FIXRobot.FIXRobot.startAcceptor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Starts acceptor for a given connection name.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Args:</dt>
+<dd>conn_name(str): FIX connection name.</dd>
+<dt>Returns:</dt>
+<dd>bool: The return value. True for success, False otherwise</dd>
+<dt>Raises:</dt>
+<dd>Exception: Raises exception when error occours.</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="FIXRobot.FIXRobot.FIXRobot.startFIXRobot">
+<code class="descname">startFIXRobot</code><span class="sig-paren">(</span><em>conn_name</em>, <em>instanceType</em><span class="sig-paren">)</span><a class="headerlink" href="#FIXRobot.FIXRobot.FIXRobot.startFIXRobot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Starts a fix connection for a specified connection name and type of instance as initiator or acceptor.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Args:</dt>
+<dd>conn_name(str): FIX connection name.
+instanceType(str): Type of the instance as initiator or acceptor.</dd>
+<dt>Returns:</dt>
+<dd>bool: The return value. True for success, False otherwise</dd>
+<dt>Raises:</dt>
+<dd>Exception: Raises exception when error occours.</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="FIXRobot.FIXRobot.FIXRobot.startInitiator">
+<code class="descname">startInitiator</code><span class="sig-paren">(</span><em>conn_name</em><span class="sig-paren">)</span><a class="headerlink" href="#FIXRobot.FIXRobot.FIXRobot.startInitiator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Starts initiator for a given connection name.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Args:</dt>
+<dd>conn_name(str): FIX connection name.</dd>
+<dt>Returns:</dt>
+<dd>bool: The return value. True for success, False otherwise</dd>
+<dt>Raises:</dt>
+<dd>Exception: Raises exception when error occours.</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="FIXRobot.FIXRobot.FIXRobot.stopAcceptor">
+<code class="descname">stopAcceptor</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#FIXRobot.FIXRobot.FIXRobot.stopAcceptor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stops acceptor for a given connection name.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Args:</dt>
+<dd>None.</dd>
+<dt>Returns:</dt>
+<dd>None.</dd>
+<dt>Raises:</dt>
+<dd>Exception: Raises exception when error occours.</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="FIXRobot.FIXRobot.FIXRobot.stopInitiator">
+<code class="descname">stopInitiator</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#FIXRobot.FIXRobot.FIXRobot.stopInitiator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stops initiator for a given connection name.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Args:</dt>
+<dd>None.</dd>
+<dt>Returns:</dt>
+<dd>None.</dd>
+<dt>Raises:</dt>
+<dd>Exception: Raises exception when error occours.</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="FIXRobot.FIXRobot.FIXRobotProcessor">
+<em class="property">class </em><code class="descclassname">FIXRobot.FIXRobot.</code><code class="descname">FIXRobotProcessor</code><a class="headerlink" href="#FIXRobot.FIXRobot.FIXRobotProcessor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">quickfix.Application</span></code></p>
+<dl class="attribute">
+<dt id="FIXRobot.FIXRobot.FIXRobotProcessor.ROBOT_LIBRARY_SCOPE">
+<code class="descname">ROBOT_LIBRARY_SCOPE</code><em class="property"> = 'TEST SUITE'</em><a class="headerlink" href="#FIXRobot.FIXRobot.FIXRobotProcessor.ROBOT_LIBRARY_SCOPE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="FIXRobot.FIXRobot.FIXRobotProcessor.checkMessagePart">
+<code class="descname">checkMessagePart</code><span class="sig-paren">(</span><em>fixMessage</em>, <em>defaultApplVerID</em>, <em>fixGroupNumField</em>, <em>fixVersionEvalString</em>, <em>expectedFIXRobotMessageName</em>, <em>fixMessageString</em><span class="sig-paren">)</span><a class="headerlink" href="#FIXRobot.FIXRobot.FIXRobotProcessor.checkMessagePart" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is used to compare an actual FIX message against the expected FIX message.
+The tag value comparison results are written to the log file and returns the status of comparison.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Args:</dt>
+<dd>fixMessage(Message): Actual FIX message object to be compared.
+defaultApplVerID(str): FIX Application version FIX4.2, FIX5.0 etc..
+fixGroupNumField(Group): Nested group name inside a FIX message object.
+fixVersionEvalString(str): FIX version FIX4.2, FIXT1.1 etc..
+expectedFIXRobotMessageName(str): FIX message name.
+fixMessageString(str): Expected FIX message in string template format</dd>
+<dt>Returns:</dt>
+<dd>bool: Returns True if difference is found during comparison of actual and expected FIX messages and False otherwise.</dd>
+<dt>Raises:</dt>
+<dd>Exception: Raises exception when error occours.</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="FIXRobot.FIXRobot.FIXRobotProcessor.clearMessageStore">
+<code class="descname">clearMessageStore</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#FIXRobot.FIXRobot.FIXRobotProcessor.clearMessageStore" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is used to clear the message store.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Args:</dt>
+<dd>None.</dd>
+<dt>Returns:</dt>
+<dd>None.</dd>
+<dt>Raises:</dt>
+<dd>Exception: Raises exception when error occours.</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="FIXRobot.FIXRobot.FIXRobotProcessor.execID">
+<code class="descname">execID</code><em class="property"> = 0</em><a class="headerlink" href="#FIXRobot.FIXRobot.FIXRobotProcessor.execID" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="FIXRobot.FIXRobot.FIXRobotProcessor.fromAdmin">
+<code class="descname">fromAdmin</code><span class="sig-paren">(</span><em>message</em>, <em>sessionID</em><span class="sig-paren">)</span><a class="headerlink" href="#FIXRobot.FIXRobot.FIXRobotProcessor.fromAdmin" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is a callback function from quickfix library which is called when an admin message is sent.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Args:</dt>
+<dd>message(Message): Sent admin FIX message object.
+sessionID(SessionId): FIX connection session object.</dd>
+<dt>Returns:</dt>
+<dd>None.</dd>
+<dt>Raises:</dt>
+<dd>None.</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="FIXRobot.FIXRobot.FIXRobotProcessor.fromApp">
+<code class="descname">fromApp</code><span class="sig-paren">(</span><em>message</em>, <em>sessionID</em><span class="sig-paren">)</span><a class="headerlink" href="#FIXRobot.FIXRobot.FIXRobotProcessor.fromApp" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is a callback function from quickfix library which is called when an application message is sent.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Args:</dt>
+<dd>message(Message): Received application FIX message object.
+sessionID(SessionId): FIX connection session object.</dd>
+<dt>Returns:</dt>
+<dd>None.</dd>
+<dt>Raises:</dt>
+<dd>None.</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="FIXRobot.FIXRobot.FIXRobotProcessor.getExpectedSenderNum">
+<code class="descname">getExpectedSenderNum</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#FIXRobot.FIXRobot.FIXRobotProcessor.getExpectedSenderNum" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is used to get the next out sequence number.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Args:</dt>
+<dd>None.</dd>
+<dt>Returns:</dt>
+<dd>None.</dd>
+<dt>Raises:</dt>
+<dd>Exception: Raises exception when error occours.</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="FIXRobot.FIXRobot.FIXRobotProcessor.getExpectedTargetNum">
+<code class="descname">getExpectedTargetNum</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#FIXRobot.FIXRobot.FIXRobotProcessor.getExpectedTargetNum" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is used to get the next in sequence number.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Args:</dt>
+<dd>None.</dd>
+<dt>Returns:</dt>
+<dd>None.</dd>
+<dt>Raises:</dt>
+<dd>Exception: Raises exception when error occours.</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="FIXRobot.FIXRobot.FIXRobotProcessor.incomingFIXRobotMessage">
+<code class="descname">incomingFIXRobotMessage</code><em class="property"> = None</em><a class="headerlink" href="#FIXRobot.FIXRobot.FIXRobotProcessor.incomingFIXRobotMessage" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="FIXRobot.FIXRobot.FIXRobotProcessor.logDumpMessageStore">
+<code class="descname">logDumpMessageStore</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#FIXRobot.FIXRobot.FIXRobotProcessor.logDumpMessageStore" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is used to dump a copy of messages into the logs.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>None.</dd>
+<dt>Returns:</dt>
+<dd>None.</dd>
+<dt>Raises:</dt>
+<dd>Exception: Raises exception when error occours.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="FIXRobot.FIXRobot.FIXRobotProcessor.onCreate">
+<code class="descname">onCreate</code><span class="sig-paren">(</span><em>sessionID</em><span class="sig-paren">)</span><a class="headerlink" href="#FIXRobot.FIXRobot.FIXRobotProcessor.onCreate" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is a callback function from quickfix library which is called in the event of creation of a new fix connection.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Args:</dt>
+<dd>sessionID(SessionId): FIX connection session object.</dd>
+<dt>Returns:</dt>
+<dd>None.</dd>
+<dt>Raises:</dt>
+<dd>None.</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="FIXRobot.FIXRobot.FIXRobotProcessor.onLogon">
+<code class="descname">onLogon</code><span class="sig-paren">(</span><em>sessionID</em><span class="sig-paren">)</span><a class="headerlink" href="#FIXRobot.FIXRobot.FIXRobotProcessor.onLogon" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is a callback function from quickfix library which is called in the event of logon by the fix connection.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Args:</dt>
+<dd>sessionID(SessionId): FIX connection session object.</dd>
+<dt>Returns:</dt>
+<dd>None.</dd>
+<dt>Raises:</dt>
+<dd>None.</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="FIXRobot.FIXRobot.FIXRobotProcessor.onLogout">
+<code class="descname">onLogout</code><span class="sig-paren">(</span><em>sessionID</em><span class="sig-paren">)</span><a class="headerlink" href="#FIXRobot.FIXRobot.FIXRobotProcessor.onLogout" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is a callback function from quickfix library which is called in the event of logout by the fix connection.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Args:</dt>
+<dd>sessionID(SessionId): FIX connection session object.</dd>
+<dt>Returns:</dt>
+<dd>None.</dd>
+<dt>Raises:</dt>
+<dd>None.</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="FIXRobot.FIXRobot.FIXRobotProcessor.orderID">
+<code class="descname">orderID</code><em class="property"> = 0</em><a class="headerlink" href="#FIXRobot.FIXRobot.FIXRobotProcessor.orderID" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="FIXRobot.FIXRobot.FIXRobotProcessor.presetFIXRobotMessage">
+<code class="descname">presetFIXRobotMessage</code><span class="sig-paren">(</span><em>presetMessage</em><span class="sig-paren">)</span><a class="headerlink" href="#FIXRobot.FIXRobot.FIXRobotProcessor.presetFIXRobotMessage" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is used to set a preset message and can be used for a any future purpose.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Args:</dt>
+<dd>presetMessage(str): Preset a message string.</dd>
+<dt>Returns:</dt>
+<dd>None.</dd>
+<dt>Raises:</dt>
+<dd>None.</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="FIXRobot.FIXRobot.FIXRobotProcessor.receiveFIXRobotMessage">
+<code class="descname">receiveFIXRobotMessage</code><span class="sig-paren">(</span><em>defaultAdminVerID</em>, <em>defaultApplVerID</em>, <em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#FIXRobot.FIXRobot.FIXRobotProcessor.receiveFIXRobotMessage" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is used to receive the FIX message.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Args:</dt>
+<dd><p class="first">defaultAdminVerID(str): FIX admin version FIX4.2, FIXT1.1 etc..
+defaultApplVerID(str): FIX application version FIX4.2, FIX5.0 etc..
+<a href="#id5"><span class="problematic" id="id6">*</span></a>args(vargs): FIX message is a variable argument which is mentioned</p>
+<blockquote class="last">
+<div>either as a message template name in the message template dictionary
+or as a message type name and message string.</div></blockquote>
+</dd>
+<dt>Returns:</dt>
+<dd>Message: Returns fix message which is received.</dd>
+<dt>Raises:</dt>
+<dd>Exception: Raises exception when error occours.</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="FIXRobot.FIXRobot.FIXRobotProcessor.sendFIXRobotMessage">
+<code class="descname">sendFIXRobotMessage</code><span class="sig-paren">(</span><em>defaultAdminVerID</em>, <em>defaultApplVerID</em>, <em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#FIXRobot.FIXRobot.FIXRobotProcessor.sendFIXRobotMessage" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is used to send the FIX message.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Args:</dt>
+<dd><p class="first">defaultAdminVerID(str): FIX admin version FIX4.2, FIXT1.1 etc..
+defaultApplVerID(str): FIX application version FIX4.2, FIX5.0 etc..
+<a href="#id7"><span class="problematic" id="id8">*</span></a>args(vargs): FIX message is a variable argument which is mentioned</p>
+<blockquote class="last">
+<div>either as a message template name in the message template dictionary
+or as a message type name and message string.</div></blockquote>
+</dd>
+<dt>Returns:</dt>
+<dd>Message: Returns fix message which is sent.</dd>
+<dt>Raises:</dt>
+<dd>Exception: Raises exception when error occours.</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="FIXRobot.FIXRobot.FIXRobotProcessor.sessID">
+<code class="descname">sessID</code><em class="property"> = None</em><a class="headerlink" href="#FIXRobot.FIXRobot.FIXRobotProcessor.sessID" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="FIXRobot.FIXRobot.FIXRobotProcessor.setMessagePart">
+<code class="descname">setMessagePart</code><span class="sig-paren">(</span><em>fixMessage</em>, <em>defaultApplVerID</em>, <em>incomingFIXRobotMessage</em>, <em>outgoingFIXRobotMessage</em>, <em>fixMessageString</em><span class="sig-paren">)</span><a class="headerlink" href="#FIXRobot.FIXRobot.FIXRobotProcessor.setMessagePart" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is used to create a FIX message object to send from a FIX message template string and 
+using previous incoming and outgoing FIX messages.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Args:</dt>
+<dd>fixMessage(Message): FIX message object created by setting its tag values to send.
+defaultApplVerID(str): Application version FIX4.2, FIX5.0 etc..
+incomingFIXRobotMessage(Message): To use values from incoming message to create a new FIX message to send.
+outgoingFIXRobotMessage(Message): To use values from outgoing message to create a new FIX message to send.
+fixMessageString(str): FIX message template to create a new FIX message to send.</dd>
+<dt>Returns:</dt>
+<dd>Message: Returns FIX message object.</dd>
+<dt>Raises:</dt>
+<dd>Exception: Raises exception when error occours.</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="FIXRobot.FIXRobot.FIXRobotProcessor.setNextSenderMsgSeqNum">
+<code class="descname">setNextSenderMsgSeqNum</code><span class="sig-paren">(</span><em>senderSeqNo</em><span class="sig-paren">)</span><a class="headerlink" href="#FIXRobot.FIXRobot.FIXRobotProcessor.setNextSenderMsgSeqNum" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is used to set the next out sequence number.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Args:</dt>
+<dd>senderSeqNo(int): Out sequence number to set.</dd>
+<dt>Returns:</dt>
+<dd>None.</dd>
+<dt>Raises:</dt>
+<dd>Exception: Raises exception when error occours.</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="FIXRobot.FIXRobot.FIXRobotProcessor.setNextTargetMsgSeqNum">
+<code class="descname">setNextTargetMsgSeqNum</code><span class="sig-paren">(</span><em>targetSeqNo</em><span class="sig-paren">)</span><a class="headerlink" href="#FIXRobot.FIXRobot.FIXRobotProcessor.setNextTargetMsgSeqNum" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is used to set the next expected in sequence number.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Args:</dt>
+<dd>targetSeqNo(int): In sequence number to set.</dd>
+<dt>Returns:</dt>
+<dd>None.</dd>
+<dt>Raises:</dt>
+<dd>Exception: Raises exception when error occours.</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="FIXRobot.FIXRobot.FIXRobotProcessor.toAdmin">
+<code class="descname">toAdmin</code><span class="sig-paren">(</span><em>message</em>, <em>sessionID</em><span class="sig-paren">)</span><a class="headerlink" href="#FIXRobot.FIXRobot.FIXRobotProcessor.toAdmin" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is a callback function from quickfix library which is called when an admin message is received.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Args:</dt>
+<dd>message(Message): Received admin FIX message object.
+sessionID(SessionId): FIX connection session object.</dd>
+<dt>Returns:</dt>
+<dd>None.</dd>
+<dt>Raises:</dt>
+<dd>None.</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="FIXRobot.FIXRobot.FIXRobotProcessor.toApp">
+<code class="descname">toApp</code><span class="sig-paren">(</span><em>message</em>, <em>sessionID</em><span class="sig-paren">)</span><a class="headerlink" href="#FIXRobot.FIXRobot.FIXRobotProcessor.toApp" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is a callback function from quickfix library which is called when an application message is received.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Args:</dt>
+<dd>message(Message): Received application FIX message object.
+sessionID(SessionId): FIX connection session object.</dd>
+<dt>Returns:</dt>
+<dd>None.</dd>
+<dt>Raises:</dt>
+<dd>None.</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="FIXRobot.FIXRobot.getId">
+<code class="descclassname">FIXRobot.FIXRobot.</code><code class="descname">getId</code><span class="sig-paren">(</span><em>inputStr</em><span class="sig-paren">)</span><a class="headerlink" href="#FIXRobot.FIXRobot.getId" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-FIXRobot">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-FIXRobot" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Anand P Subramanian.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/FIXRobot.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

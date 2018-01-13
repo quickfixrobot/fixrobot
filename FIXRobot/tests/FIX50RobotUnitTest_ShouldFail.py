@@ -17,9 +17,10 @@ sys.path.append(os.path.join(os.path.dirname(
     os.path.realpath(__file__)), os.pardir))
 from FIXRobot import *
 
-
+#FIXRobot testcase extending unittest.TestCase class
 class FIXRobotUnitTest(unittest.TestCase):
 
+    #Testcase setup class method only called once in the beginning.
     @classmethod
     def setUpClass(cls):
         os.environ["FIXROBOTPATH"] = os.path.dirname(
@@ -39,6 +40,7 @@ class FIXRobotUnitTest(unittest.TestCase):
         time.sleep(1)
         cls.tearDownCount = 1
 
+    #Testcase teardown class method only called once in the end.
     @classmethod
     def tearDownClass(cls):
         returnValue = cls.exch.clearMessageStore()
@@ -53,6 +55,7 @@ class FIXRobotUnitTest(unittest.TestCase):
         time.sleep(1)
         cls.tearDownCount = cls.tearDownCount + 1
 
+    #Negative testcase for OrderList where fix message arguments are passed as template names.
     @unittest.expectedFailure
     def test_OrderList_ShouldFail(self):
         returnValue = self.exch.clearMessageStore()
@@ -72,6 +75,7 @@ class FIXRobotUnitTest(unittest.TestCase):
                 returnMessageAcceptor.getHeader().getField(35), "E")
         time.sleep(1)
 
+    #Negative testcase for OrderList reverse flow where fix message arguments are passed as template names.
     @unittest.expectedFailure
     def test_OrderListReverse_ShouldFail(self):
         returnValue = self.exch.clearMessageStore()
@@ -87,6 +91,7 @@ class FIXRobotUnitTest(unittest.TestCase):
         self.assertNotEqual(returnValue, None)
         time.sleep(1)
 
+    #Negative testcase for NewOrderSingle and Fill where fix message arguments are passed as template names.
     @unittest.expectedFailure
     def test_NewOrderSingleFilled_ShouldFail(self):
         returnValue = self.exch.clearMessageStore()
@@ -121,6 +126,7 @@ class FIXRobotUnitTest(unittest.TestCase):
         self.assertEqual(returnValue, True)
         time.sleep(1)
 
+    #Negative testcase for OrderList where fix message arguments are passed as template names.   
     @unittest.expectedFailure
     def test_OrderListStringFail(self):
         returnValue = self.exch.clearMessageStore()

@@ -31,13 +31,11 @@ Installation Requirements
 --------------------------
 You have to install the following softwares
 
+
 PYTHON 2.7
 -------
 www.python.org
 
-Python unittest
-----------------
-Installation: pip install unittest
 
 QUICKFIX
 --------
@@ -66,6 +64,12 @@ Installation: pii install quickfix
 If the above steps doesnt work for installing quickfix you can try the following steps
 
 pip install quickfix
+
+Python unittest
+----------------
+Python unittest is part of python standard library and see if its installed by doing "import unittest" in python prompt.
+If it is not installed you can try installation: pip install unittest
+
 
 
 

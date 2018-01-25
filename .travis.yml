@@ -8,4 +8,4 @@ before_script:
   - cd FIXRobot/tests/
 script:
   # Run all tests
-  - runTestAll.sh
+  - sh runTestAll.sh

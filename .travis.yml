@@ -4,8 +4,6 @@ python:
 install:
   #Install quickfix
   - pip install quickfix
-  #Install unittest
-  - pip install unittest
 before_script: 
   - cd FIXRobot/tests/
 script:

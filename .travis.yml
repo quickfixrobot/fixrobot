@@ -3,7 +3,7 @@ python:
   - "2.7"
 install:
   #Install quickfix
-  - pii install quickfix
+  - pip install quickfix
   #Install unittest
   - pip install unittest
 before_script: 

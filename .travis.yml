@@ -1,0 +1,11 @@
+language: python
+python:
+  - "2.7"
+install:
+  #Install quickfix
+  - pii install quickfix
+  #Install unittest
+  - pip install unittest
+script:
+  # Run all tests
+  - FIXRobot/tests/runTestAll.sh

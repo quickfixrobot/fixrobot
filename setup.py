@@ -1,5 +1,7 @@
 from setuptools import setup
-
+import os
+with open('requirements.txt') as f:
+    required = f.read().splitlines()
 setup(
    name='FIXRobot',
    version='1.0',
@@ -10,7 +12,7 @@ setup(
    author_email='quickfixrobot@gmail.com',
    url="https://github.com/quickfixrobot",
    packages=['FIXRobot'],  #same as name
-   install_requires=['wheel', 'configparser', 'pytest'], #external packages as dependencies
+   install_requires=required, #external packages as dependencies
    scripts=[
             'scripts/cool',
             'scripts/skype',

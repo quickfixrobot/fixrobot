@@ -6,8 +6,7 @@ on:
   pull_request:
     branches: [main]
 jobs:
-  tests:
-    name: pytest on linux ${{ matrix.python-version }}
+  build:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:

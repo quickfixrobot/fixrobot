@@ -59,7 +59,7 @@ setup(
    author_email='quickfixrobot@gmail.com',
    url="https://github.com/quickfixrobot",
    packages=['FIXRobot'],  #same as name
-   install_requires=['wheel', 'configparser', 'quickfix', 'pytest'], #external packages as dependencies
+   install_requires=['wheel', 'configparser', 'pytest'], #external packages as dependencies
    scripts=[
             'scripts/cool',
             'scripts/skype',

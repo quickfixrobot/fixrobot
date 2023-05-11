@@ -14,7 +14,7 @@ import time
 import quickfix as fix
 sys.path.append(os.path.join(os.path.dirname(
     os.path.realpath(__file__)), os.pardir))
-from FIXRobot import *
+from FIXRobotClass import *
 
 import unittest
 
@@ -26,7 +26,7 @@ class FIXRobotUnitTest(unittest.TestCase):
     def setUpClass(cls):
         os.environ["FIXROBOTPATH"] = os.path.dirname(
             os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-        print os.environ["FIXROBOTPATH"]
+        print(os.environ["FIXROBOTPATH"])
         exch_conn_name = "EXCHANGEFIX42"
         client_conn_name = "CLIENTFIX42"
         cls.exch = FIXRobot()

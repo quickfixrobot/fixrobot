@@ -1,0 +1,5 @@
+https://download.lfd.uci.edu/pythonlibs/archived/quickfix-1.15.1-cp39-cp39-win_amd64.whl; platform_machine=='AMD64'
+https://download.lfd.uci.edu/pythonlibs/archived/quickfix-1.15.1-cp39-cp39-win32.whl; platform_machine=='win32'
+quickfix==1.15.1; sys_platform == 'linux'
+quickfix==1.15.1; sys_platform == 'linux2'
+pytest

@@ -1,5 +1,5 @@
-pytest
 configparser
+pytest
 quickfix==1.15.1; platform_machine == 'linux'
 quickfix==1.15.1; platform_machine == 'linux2'
 quickfix==1.15.1; platform_machine == 'Linux'

@@ -1,0 +1,32 @@
+name: Continuous Integration
+run-name: ${{ github.actor }} is testing out GitHub Actions
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  tests:
+    name: pytest on linux ${{ matrix.python-version }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ ubuntu-latest, windows-latest ]
+        python-version: ["3.9"]
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install dependencies
+        run: |
+          python -VV
+          python -m site
+          python -m pip install --upgrade pip setuptools wheel
+          python -m pip install --upgrade coverage[toml] tox tox-gh-actions          
+          python setup.py
+      - name: Run pytest targets for ${{ matrix.python-version }}
+        run: python -m pytest

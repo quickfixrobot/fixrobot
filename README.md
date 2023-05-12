@@ -32,7 +32,7 @@ Installation Requirements
 You have to install the following softwares
 
 
-PYTHON 3.9
+PYTHON 3.8
 -------
 www.python.org
 
@@ -47,13 +47,13 @@ http://blog.junmin.info/2015/04/25/a05-quickfix/
 Quickfix python API install
 For Windows
 ------------
-For windows, no offical guide for compilation yet. Easiest way is using offical built binary package (python 3.9):
+For windows, no offical guide for compilation yet. Easiest way is using offical built binary package (python 3.8):
 amd64 or win32 from https://www.lfd.uci.edu/~gohlke/pythonlibs/#quickfix
 
 Installation: 
-pip install quickfix‑1.15.1‑cp39‑cp39‑win_amd64.whl
+pip install quickfix‑1.15.1‑cp38‑cp38‑win_amd64.whl
 or
-pip install quickfix‑1.15.1‑cp39‑cp39‑win32.whl
+pip install quickfix‑1.15.1‑cp38‑cp38‑win32.whl
 
 For Linux
 ---------

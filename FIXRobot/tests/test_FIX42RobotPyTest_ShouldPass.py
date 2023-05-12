@@ -22,6 +22,7 @@ from FIXRobot.FIXRobot.FIXRobotClass import *
 @pytest.mark.usefixtures("setUpFIX42ClientAndExchange")
 class Test_Class:
     #Positive testcase for NewOrderSingle and Fill where fix message arguments are passed as strings.
+    @pytest.mark.fix42positive
     def test_NewOrderSingleFilled_AsStrings_ShouldPass(self, setUpFIX42ClientAndExchange):
         clientAndExchange = setUpFIX42ClientAndExchange
         self.exch = clientAndExchange[0]
@@ -72,6 +73,7 @@ class Test_Class:
         time.sleep(1)
 
     #Positive testcase for NewOrderSingle and Filled where fix message arguments are passed as template names.
+    @pytest.mark.fix42positive
     def test_NewOrderSingleFilled_AsNames_ShouldPass(self, setUpFIX42ClientAndExchange):
         clientAndExchange = setUpFIX42ClientAndExchange
         self.exch = clientAndExchange[0]
@@ -115,6 +117,7 @@ class Test_Class:
         time.sleep(1)
 
     #Positive testcase for NewOrderSingle and CancelRequest where fix message arguments are passed as template names.
+    @pytest.mark.fix42positive
     def test_NewOrderSingleFilled_AsNames_ShouldPass(self, setUpFIX42ClientAndExchange):
         clientAndExchange = setUpFIX42ClientAndExchange
         self.exch = clientAndExchange[0]
@@ -165,6 +168,7 @@ class Test_Class:
         time.sleep(1)
 
     #Positive testcase for NewOrderSingle and CancelRequest where fix message arguments are passed as template names.
+    @pytest.mark.fix42positive
     def test_NewOrderSingleOrderCancelRequest_AsNames_ShouldPass(self, setUpFIX42ClientAndExchange):
         clientAndExchange = setUpFIX42ClientAndExchange
         self.exch = clientAndExchange[0]
@@ -225,6 +229,7 @@ class Test_Class:
         time.sleep(1)
 
     #Positive testcase for NewOrderSingle and CancelReplaceRequest where fix message arguments are passed as template names.
+    @pytest.mark.fix42positive
     def test_NewOrderSingleOrderCancelReplaceRequest_AsNames_ShouldPass(self, setUpFIX42ClientAndExchange):
         clientAndExchange = setUpFIX42ClientAndExchange
         self.exch = clientAndExchange[0]
@@ -284,6 +289,7 @@ class Test_Class:
         time.sleep(1)
 
     #Positive testcase for TestRequest and Heartbeat where fix message arguments are passed as template names.
+    @pytest.mark.fix42positive
     def test_TestRequestHeartBeat_AsNames_ShouldPass(self, setUpFIX42ClientAndExchange):
         clientAndExchange = setUpFIX42ClientAndExchange
         self.exch = clientAndExchange[0]
@@ -321,6 +327,7 @@ class Test_Class:
         time.sleep(1)
 
     #Positive testcase for OrderList and Fill where fix message arguments are passed as template names.
+    @pytest.mark.fix42positive
     def test_OrderListAckFill_AsNames_ShouldPass(self, setUpFIX42ClientAndExchange):
         clientAndExchange = setUpFIX42ClientAndExchange
         self.exch = clientAndExchange[0]
@@ -393,6 +400,7 @@ class Test_Class:
         time.sleep(1)
 
     #Positive testcase for OrderList and Fill reverse flow where fix message arguments are passed as template names.
+    @pytest.mark.fix42positive
     def test_OrderListAckFillReverse_AsNames_ShouldPass(self, setUpFIX42ClientAndExchange):
         clientAndExchange = setUpFIX42ClientAndExchange
         self.exch = clientAndExchange[0]
@@ -466,6 +474,7 @@ class Test_Class:
         time.sleep(1)
 
     #Positive testcase for TestRequest and Heartbeat in reverse flow where fix message arguments are passed as template names.
+    @pytest.mark.fix42positive
     def test_TestRequestHeartBeatReverse_AsNames_ShouldPass(self, setUpFIX42ClientAndExchange):
         clientAndExchange = setUpFIX42ClientAndExchange
         self.exch = clientAndExchange[0]
@@ -495,6 +504,7 @@ class Test_Class:
         time.sleep(1)
 
     #Positive testcase for get sender and target message sequence number.
+    @pytest.mark.fix42positive
     def test_getSenderAndTargetMsgSeqNum_ShouldPass(self, setUpFIX42ClientAndExchange):
         clientAndExchange = setUpFIX42ClientAndExchange
         self.exch = clientAndExchange[0]
@@ -505,6 +515,7 @@ class Test_Class:
         assert type(senderValue) == type(targetValue)
 
     #Positive testcase for ResendRequest where fix message arguments are passed as template names.
+    @pytest.mark.fix42positive
     def test_ResendRequest_AsNames_ShouldPass(self, setUpFIX42ClientAndExchange):
         clientAndExchange = setUpFIX42ClientAndExchange
         self.exch = clientAndExchange[0]

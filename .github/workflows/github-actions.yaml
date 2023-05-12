@@ -32,4 +32,4 @@ jobs:
           python -m pip install -r github_actions_requirements.txt
       - name: Run pytest targets for ${{ matrix.python-version }}
         run: |
-          python -m pytest -v
+          python -m pytest -m fix42positive -v

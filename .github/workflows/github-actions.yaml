@@ -31,4 +31,8 @@ jobs:
           python -m pip install --upgrade pytest
           python -m pip install -r github_actions_requirements.txt
       - name: Run pytest targets for ${{ matrix.python-version }}
-        run: python -m pytest
+        run: |
+          python -m pytest -v test_FIX42RobotPyTest_ShouldPass.py
+          python -m pytest -v test_FIX50RobotPyTest_ShouldPass.py
+          python -m pytest -v test_FIX42RobotPyTest_ShouldFail.py
+          python -m pytest -v test_FIX50RobotPyTest_ShouldFail.py

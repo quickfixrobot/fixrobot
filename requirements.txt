@@ -1,8 +1,5 @@
 configparser
 pytest
-quickfix==1.15.1; platform_machine == 'linux'
-quickfix==1.15.1; platform_machine == 'linux2'
-quickfix==1.15.1; platform_machine == 'Linux'
 https://download.lfd.uci.edu/pythonlibs/archived/quickfix-1.15.1-cp39-cp39-win_amd64.whl; platform_system == 'Windows' and python_version == '3.9' and platform_machine=='AMD64'
 https://download.lfd.uci.edu/pythonlibs/archived/quickfix-1.15.1-cp39-cp39-win32.whl; platform_system == 'Windows' and python_version == '3.9' and platform_machine=='win32'
 https://download.lfd.uci.edu/pythonlibs/archived/quickfix-1.15.1-cp38-cp38-win_amd64.whl; platform_system == 'Windows' and python_version == '3.8' and platform_machine=='AMD64'
@@ -19,3 +16,6 @@ https://download.lfd.uci.edu/pythonlibs/archived/quickfix‑1.15.1‑cp27‑cp27
 https://download.lfd.uci.edu/pythonlibs/archived/quickfix‑1.15.1‑cp27‑cp27m‑win32.whl; platform_system == 'Windows' and python_version == '2.7' and platform_machine=='win32'
 https://download.lfd.uci.edu/pythonlibs/archived/quickfix‑1.14.3‑cp27‑none‑win_amd64.whl; platform_system == 'Windows' and python_version == 'none' and platform_machine=='AMD64'
 https://download.lfd.uci.edu/pythonlibs/archived/quickfix‑1.14.3‑cp27‑none‑win32.whl; platform_system == 'Windows' and python_version == 'none' and platform_machine=='win32'
+quickfix==1.15.1; platform_machine == 'linux'
+quickfix==1.15.1; platform_machine == 'linux2'
+quickfix==1.15.1; platform_machine == 'Linux'

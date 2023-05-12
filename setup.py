@@ -33,7 +33,7 @@ elif 'windows' in osname:
     pipwheelkey = "cp" + pythonVersionShort + "-" + osname + "-" + platformMachine
     quickfixpippath = "'"+quickfix_windows_wheels[pipwheelkey]+"'"
 else:
-    quickfixpippackage = quickfix
+    quickfixpippackage = 'quickfix'
 
 
 setup(

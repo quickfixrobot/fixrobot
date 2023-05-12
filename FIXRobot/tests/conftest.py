@@ -1,5 +1,5 @@
 """
-### FIXRobot FIX50 positive testcases
+### FIXRobot conftest.py for pytest test fixtures
 """
 __author__ = "Anand P. Subramanian (quickfixrobot@gmail.com)"
 __date__ = "23 July 2016 - Till Date"

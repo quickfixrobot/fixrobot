@@ -25,7 +25,7 @@ quickfix_windows_wheels= { 'cp39-windows-amd64':'https://download.lfd.uci.edu/py
 }
 osname = platform.system().lower()
 if 'linux' in osname:
-    quickfixpippackage = quickfix
+    quickfixpippackage = 'quickfix'
 elif 'windows' in osname:
     pythonVersionTuple = platform.python_version_tuple()
     pythonVersionShort = pythonVersionTuple[0] + pythonVersionTuple[1]

@@ -1,5 +1,5 @@
 """
-### FIXRobot FIX50 positive testcases
+### FIXRobot FIX50 pytest failure testcases
 """
 __author__ = "Anand P. Subramanian (quickfixrobot@gmail.com)"
 __date__ = "23 July 2016 - Till Date"
@@ -23,6 +23,7 @@ from FIXRobot.FIXRobot.FIXRobotClass import *
 @pytest.mark.usefixtures("setUpFIX50ClientAndExchange")
 class Test_Class:
     #Negative testcase for OrderList where fix message arguments are passed as template names.
+    @pytest.mark.fix50failure
     @pytest.mark.xfail
     def test_OrderList_ShouldFail(self, setUpFIX50ClientAndExchange):
         clientAndExchange = setUpFIX50ClientAndExchange
@@ -48,6 +49,7 @@ class Test_Class:
         time.sleep(1)
 
     #Negative testcase for OrderList reverse flow where fix message arguments are passed as template names.
+    @pytest.mark.fix50failure
     @pytest.mark.xfail
     def test_OrderListReverse_ShouldFail(self, setUpFIX50ClientAndExchange):
         clientAndExchange = setUpFIX50ClientAndExchange
@@ -71,6 +73,7 @@ class Test_Class:
         time.sleep(1)
 
     #Negative testcase for NewOrderSingle and Fill where fix message arguments are passed as template names.
+    @pytest.mark.fix50failure
     @pytest.mark.xfail
     def test_NewOrderSingleFilled_ShouldFail(self, setUpFIX50ClientAndExchange):
         clientAndExchange = setUpFIX50ClientAndExchange
@@ -110,7 +113,8 @@ class Test_Class:
         assert returnValue == True
         time.sleep(1)
 
-    #Negative testcase for OrderList where fix message arguments are passed as template names.   
+    #Negative testcase for OrderList where fix message arguments are passed as template names.
+    @pytest.mark.fix50failure
     @pytest.mark.xfail
     def test_OrderListStringFail(self, setUpFIX50ClientAndExchange):
         clientAndExchange = setUpFIX50ClientAndExchange

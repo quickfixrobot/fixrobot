@@ -5,13 +5,17 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
+  workflow_dispatch:
+
 jobs:
   tests:
+    name: pytest on linux ${{ matrix.python-version }}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         os: [ ubuntu-latest, windows-latest ]
         python-version: ["3.9"]
+
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
@@ -23,6 +27,7 @@ jobs:
           python -m site
           python -m pip install --upgrade pip setuptools wheel
           python -m pip install --upgrade coverage[toml] tox tox-gh-actions
-          python -m pip install -r requirements.txt
+          python -m pip install --upgrade importlib-metadata
+          python setup.py
       - name: Run pytest targets for ${{ matrix.python-version }}
         run: python -m pytest

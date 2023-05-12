@@ -2,10 +2,10 @@ from setuptools import setup
 
 import sys
 import subprocess
-#import pkg_resources
+# import pkg_resources
 import platform
 
-#required  = {'quickfix', 'configparser', 'pytest'}
+# required  = {'quickfix', 'configparser', 'pytest'}
 quickfix_windows_wheels= { 'cp39-windows-amd64':'https://download.lfd.uci.edu/pythonlibs/archived/quickfix‑1.15.1‑cp39‑cp39‑win_amd64.whl',
                            'cp39-windows-win32':'https://download.lfd.uci.edu/pythonlibs/archived/quickfix‑1.15.1‑cp39‑cp39‑win32.whl',
                            'cp38-windows-amd64':'https://download.lfd.uci.edu/pythonlibs/archived/quickfix-1.15.1-cp38-cp38-win_amd64.whl',

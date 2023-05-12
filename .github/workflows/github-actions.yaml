@@ -9,7 +9,7 @@ on:
 
 jobs:
   tests:
-    name: pytest on linux ${{ matrix.python-version }}
+    name: pytest on Python ${{ matrix.python-version }}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:

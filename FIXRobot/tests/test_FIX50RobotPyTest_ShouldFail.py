@@ -17,7 +17,7 @@ import pytest
 
 sys.path.append(os.path.join(os.path.dirname(
     os.path.realpath(__file__)), os.pardir))
-from FIXRobot.FIXRobot.FIXRobotClass import *
+from fixrobot.FIXRobot.FIXRobotClass import *
 
 #FIXRobot testcase extending unittest.TestCase class
 @pytest.mark.usefixtures("setUpFIX50ClientAndExchange")

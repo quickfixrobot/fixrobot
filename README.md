@@ -25,17 +25,13 @@ For enhancements, contributions, collabaration or any questions please contact a
 
 For any issues or enhacements you can also enter the issues in github
 
-
-
 Installation Requirements
 --------------------------
 You have to install the following softwares
 
-
 PYTHON 3.9
 ----------
 www.python.org
-
 
 QUICKFIX
 --------
@@ -65,7 +61,6 @@ If the above steps doesnt work for installing quickfix you can try the following
 
 Requirement: gcc, gcc-c++, python-devel (centOS 6) Installation: pii install quickfix
 
-
 Python configparser
 -------------------
 Easy Installation: pip install -r requirements.txt
@@ -83,6 +78,5 @@ Python unittest
 ----------------
 Python unittest is part of python standard library and see if its installed by doing "import unittest" in python prompt.
 If it is not installed you can try installation: pip install unittest
-
 
 

@@ -11,7 +11,7 @@ __URL__ = "https://github.com/quickfixrobot/FIXRobot/"
 import sys
 import os
 import time
-import quickfix as fix
+#import quickfix as fix
 
 import pytest
 

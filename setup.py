@@ -42,7 +42,7 @@ setup(
    description='A useful module to test FIX connectivity and FIX engines. Usage: import fixrobot',
    license="MIT",
    long_description='A useful module to test FIX connectivity and FIX engines. Usage: import fixrobot',
-   author='Man Foo',
+   author='Anand P Subramanian',
    author_email='quickfixrobot@gmail.com',
    url="https://github.com/quickfixrobot",
    packages=['fixrobot'],  #same as name

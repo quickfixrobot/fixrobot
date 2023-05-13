@@ -1,12 +1,12 @@
 """
-FIXRobot is software to write testcases and test FIXEngine using FIX Protocol. 
-FIXRobot can act as intitiator/client and acceptor/exchange.
-FIXRobot can send and receive FIX messages and will compare the actual messages with the expected messages.
+fixrobot is software to write testcases and test FIXEngine using FIX Protocol.
+fixrobot can act as intitiator/client and acceptor/exchange.
+fixrobot can send and receive FIX messages and will compare the actual messages with the expected messages.
 The testcase can be run as python unittests or pytest plugins
 """
 __author__ = "Anand P. Subramanian (quickfixrobot@gmail.com)"
 __date__ = "23 July 2016 - Till Date"
-__copyright__ = "FIXRobot  Copyright (C) 2016  Anand P. Subramanian."
+__copyright__ = "fixrobot  Copyright (C) 2016  Anand P. Subramanian."
 __license__ = "1.0"
 __version__ = "License: GGPLv3+ GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>."
 __credits__ = "Anand P. Subramanian"
@@ -948,9 +948,9 @@ class FIXRobotProcessor(fix.Application):
             raise Exception
 
 
-class FIXRobot():
+class fixrobot():
     '''
-        FIXRobot class creates a FIX connection and/or then send and receive FIX messages
+        fixrobot class creates a FIX connection and/or then send and receive FIX messages
     '''
     def startFIXRobot(self, conn_name, instanceType):
         '''
@@ -1092,7 +1092,7 @@ class FIXRobot():
                 raise Exception
             return fixMessage
         except Exception as e:
-            logging.debug("Failed sending FIXRobot message!!!%s - %s",
+            logging.debug("Failed sending fixrobot message!!!%s - %s",
                           e.args, sys.exc_info()[0])
             raise Exception
 
@@ -1119,7 +1119,7 @@ class FIXRobot():
                 raise Exception
             return fixMessage
         except Exception as e:
-            logging.debug("Failed receiving FIXRobot message or Difference found!!!%s - %s",
+            logging.debug("Failed receiving fixrobot message or Difference found!!!%s - %s",
                           e.args, sys.exc_info()[0])
             raise Exception
 
@@ -1281,9 +1281,9 @@ class FIXRobot():
 if __name__ == "__main__":
     try:
         print("Author: Written by Anand P. Subramanian.")
-        print("Copyright: FIXRobot  Copyright (C) 2016  Anand P. Subramanian.")
+        print("Copyright: fixrobot  Copyright (C) 2016  Anand P. Subramanian.")
         print("License: GGPLv3+ GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.")
         print("Reporting bugs: https://github.com/quickfixrobot/FIXRobot/issues")
-        print("Usage: import FIXRobot")
+        print("Usage: import fixrobot")
     except (fix.ConfigError, fix.RuntimeError) as e:
         print(e)

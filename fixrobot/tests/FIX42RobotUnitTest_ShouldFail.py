@@ -1,9 +1,9 @@
 """
-FIXRobot FIX42 negative testcases
+fixrobot FIX42 negative testcases
 """
 __author__ = "Anand P. Subramanian (quickfixrobot@gmail.com)"
 __date__ = "23 July 2016 - Till Date"
-__copyright__ = "FIXRobot  Copyright (C) 2016  Anand P. Subramanian."
+__copyright__ = "fixrobot  Copyright (C) 2016  Anand P. Subramanian."
 __license__ = "1.0"
 __version__ = "License: GGPLv3+ GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>."
 __credits__ = "Anand P. Subramanian"
@@ -15,9 +15,9 @@ import quickfix as fix
 import unittest
 sys.path.append(os.path.join(os.path.dirname(
     os.path.realpath(__file__)), os.pardir))
-from FIXRobotClass import *
+from fixrobot import *
 
-#FIXRobot testcase extending unittest.TestCase class
+#fixrobot testcase extending unittest.TestCase class
 class FIXRobotUnitTest(unittest.TestCase):
 
     #Testcase setup class method only called once in the beginning.
@@ -28,8 +28,8 @@ class FIXRobotUnitTest(unittest.TestCase):
         print(os.environ["FIXROBOTPATH"])
         exch_conn_name = "EXCHANGEFIX42"
         client_conn_name = "CLIENTFIX42"
-        cls.exch = FIXRobot()
-        cls.client = FIXRobot()
+        cls.exch = fixrobot()
+        cls.client = fixrobot()
         cls.exch.startAcceptor(exch_conn_name)
         time.sleep(1)
         cls.client.startInitiator(client_conn_name)

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# FIXRobot documentation build configuration file, created by
+# fixrobot documentation build configuration file, created by
 # sphinx-quickstart on Sat Jan 13 20:32:45 2018.
 #
 # This file is execfile()d with the current directory set to its
@@ -46,7 +46,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'FIXRobot'
+project = u'fixrobot'
 copyright = u'2018, Anand P Subramanian'
 author = u'Anand P Subramanian'
 
@@ -139,7 +139,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'FIXRobot.tex', u'FIXRobot Documentation',
+    (master_doc, 'fixrobot.tex', u'fixrobot Documentation',
      u'Anand P Subramanian', 'manual'),
 ]
 
@@ -149,7 +149,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'fixrobot', u'FIXRobot Documentation',
+    (master_doc, 'fixrobot', u'fixrobot Documentation',
      [author], 1)
 ]
 
@@ -160,8 +160,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'FIXRobot', u'FIXRobot Documentation',
-     author, 'FIXRobot', 'One line description of project.',
+    (master_doc, 'fixrobot', u'fixrobot Documentation',
+     author, 'fixrobot', 'One line description of project.',
      'Miscellaneous'),
 ]
 

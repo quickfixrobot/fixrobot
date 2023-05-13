@@ -1,9 +1,9 @@
 """
-### FIXRobot FIX50 pytest positive testcases
+### fixrobot FIX50 pytest positive testcases
 """
 __author__ = "Anand P. Subramanian (quickfixrobot@gmail.com)"
 __date__ = "23 July 2016 - Till Date"
-__copyright__ = "FIXRobot  Copyright (C) 2023  Anand P. Subramanian."
+__copyright__ = "fixrobot  Copyright (C) 2023  Anand P. Subramanian."
 __license__ = "1.1"
 __version__ = "License: GGPLv3+ GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>."
 __credits__ = "Anand P. Subramanian"
@@ -17,7 +17,7 @@ import pytest
 
 sys.path.append(os.path.join(os.path.dirname(
     os.path.realpath(__file__)), os.pardir))
-from fixrobot.FIXRobot.FIXRobotClass import *
+from fixrobot.fixrobot.fixrobot import *
 
 @pytest.mark.usefixtures("setUpFIX50ClientAndExchange")
 class Test_Class:

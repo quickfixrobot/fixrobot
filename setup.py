@@ -37,15 +37,15 @@ else:
 
 
 setup(
-   name='FIXRobot',
+   name='fixrobot',
    version='1.0',
-   description='A useful module to test FIX connectivity and FIX engines. Usage: import FIXRobot',
+   description='A useful module to test FIX connectivity and FIX engines. Usage: import fixrobot',
    license="MIT",
-   long_description='A useful module to test FIX connectivity and FIX engines. Usage: import FIXRobot',
+   long_description='A useful module to test FIX connectivity and FIX engines. Usage: import fixrobot',
    author='Man Foo',
    author_email='quickfixrobot@gmail.com',
    url="https://github.com/quickfixrobot",
-   packages=['FIXRobot'],  #same as name
+   packages=['fixrobot'],  #same as name
    install_requires=['wheel', 'configparser', 'pytest', 'quickfix'], #external packages as dependencies
    scripts=[
             'scripts/cool',

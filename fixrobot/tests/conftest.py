@@ -1,9 +1,9 @@
 """
-### FIXRobot conftest.py for pytest test fixtures
+### fixrobot conftest.py for pytest test fixtures
 """
 __author__ = "Anand P. Subramanian (quickfixrobot@gmail.com)"
 __date__ = "23 July 2016 - Till Date"
-__copyright__ = "FIXRobot  Copyright (C) 2023  Anand P. Subramanian."
+__copyright__ = "fixrobot  Copyright (C) 2023  Anand P. Subramanian."
 __license__ = "1.1"
 __version__ = "License: GGPLv3+ GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>."
 __credits__ = "Anand P. Subramanian"
@@ -11,13 +11,13 @@ __URL__ = "https://github.com/quickfixrobot/FIXRobot/"
 import sys
 import os
 import time
-#import quickfix as fix
+import quickfix as fix
 
 import pytest
 
 sys.path.append(os.path.join(os.path.dirname(
     os.path.realpath(__file__)), os.pardir))
-from fixrobot.FIXRobot.FIXRobotClass import *
+from fixrobot.fixrobot.fixrobot import *
 
 @pytest.fixture(scope="class")
 def setUpFIX50ClientAndExchange():
@@ -25,7 +25,7 @@ def setUpFIX50ClientAndExchange():
         os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
     print(os.environ["FIXROBOTPATH"])
     exch_conn_name = "EXCHANGEFIX50"
-    exch_connection = FIXRobot()
+    exch_connection = fixrobot()
     time.sleep(1)
     exch_connection.startAcceptor(exch_conn_name)
     time.sleep(1)
@@ -38,7 +38,7 @@ def setUpFIX50ClientAndExchange():
     print(os.environ["FIXROBOTPATH"])
     client_conn_name = "CLIENTFIX50"
     print(sys.path)
-    client_connection = FIXRobot()
+    client_connection = fixrobot()
     time.sleep(1)
     client_connection.startInitiator(client_conn_name)
     time.sleep(1)
@@ -71,7 +71,7 @@ def setUpFIX42ClientAndExchange():
         os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
     print(os.environ["FIXROBOTPATH"])
     exch_conn_name = "EXCHANGEFIX42"
-    exch_connection = FIXRobot()
+    exch_connection = fixrobot()
     time.sleep(1)
     exch_connection.startAcceptor(exch_conn_name)
     time.sleep(1)
@@ -84,7 +84,7 @@ def setUpFIX42ClientAndExchange():
     print(os.environ["FIXROBOTPATH"])
     client_conn_name = "CLIENTFIX42"
     print(sys.path)
-    client_connection = FIXRobot()
+    client_connection = fixrobot()
     time.sleep(1)
     client_connection.startInitiator(client_conn_name)
     time.sleep(1)

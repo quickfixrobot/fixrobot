@@ -1,25 +1,25 @@
 README
 -------
 
-FIXRobot is software to write testcases and test FIXEngine using FIX Protocol. 
+fixrobot is software to write testcases and test FIXEngine using FIX Protocol. 
 
-FIXRobot can act as intitiator and acceptor/exchange. 
+fixrobot can act as intitiator and acceptor/exchange. 
 
-FIXRobot can send and receive FIX messages and will compare the actual messages with the expected messages.
+fixrobot can send and receive FIX messages and will compare the actual messages with the expected messages.
 
 For documentation please check the docs/index.html.
 
-Usage: import FIXRobot
+Usage: import fixrobot
 
 Author: Written by Anand P. Subramanian.
 
-Copyright: FIXRobot  Copyright (C) 2016  Anand P. Subramanian.
+Copyright: fixrobot  Copyright (C) 2016  Anand P. Subramanian.
 
 License: GGPLv3+ GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.
 
-Download: <https://github.com/quickfixrobot/FIXRobot/>
+Download: <https://github.com/quickfixrobot/fixrobot/>
 
-Reporting bugs: <https://github.com/quickfixrobot/FIXRobot/issues>
+Reporting bugs: <https://github.com/quickfixrobot/fixrobot/issues>
 
 For enhancements, contributions, collabaration or any questions please contact at <quickfixrobot@gmail.com>
 
